@@ -6,11 +6,11 @@
 
 ### 请求协议
 
-| 字段           | 说明         | 备注 |
-| -------------- | ------------ | ---- |
-| version        | 传输协议版本 |      |
-| content-length | payload长度  |      |
-| payload        | 请求消息负载 |      |
+| 字段             | 说明        | 备注  |
+|----------------|-----------|-----|
+| version        | 传输协议版本    |     |
+| content-length | payload长度 |     |
+| payload        | 请求消息负载    |     |
 
 ```text
 version:1\r\n
@@ -31,18 +31,19 @@ payload:xxxx
     "params4": []
   },
   "options": {
-    "java_interface_name": "string"
+    "java_interface_name": "string",
+    "java_parameter_types": []
   }
 }
 ```
 
 ### 响应协议
 
-| 字段           | 说明         | 备注 |
-| -------------- | ------------ | ---- |
-| version        | 传输协议版本 |      |
-| content-length | payload长度  |      |
-| payload        | 响应消息负载 |      |
+| 字段             | 说明        | 备注  |
+|----------------|-----------|-----|
+| version        | 传输协议版本    |     |
+| content-length | payload长度 |     |
+| payload        | 响应消息负载    |     |
 
 ```text
 version:1\r\n
@@ -92,19 +93,19 @@ methods:
 
 ### 数据类型定义
 
-| 数据类型 | 说明                     |
-| -------- | ------------------------ |
-| string   | 普通字符串 \| 时间字符串 |
-| number   | 数值                     |
-| array    | 数组                     |
-| object   | 对象                     |
+| 数据类型   | 说明            |
+|--------|---------------|
+| string | 普通字符串 、 时间字符串 |
+| number | 数值            |
+| array  | 数组            |
+| object | 对象            |
 
 ## demo
 
 #### python
+
 - [server](/simple-rpc-python/demo/py_server.py)
 - [client](/simple-rpc-python/demo/py_client.py)
-
 
 # 开发计划
 
