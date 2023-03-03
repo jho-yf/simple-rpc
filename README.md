@@ -29,10 +29,6 @@ payload:xxxx
     "params2": 0,
     "params3": {},
     "params4": []
-  },
-  "options": {
-    "java_interface_name": "string",
-    "java_parameter_types": []
   }
 }
 ```
