@@ -11,7 +11,6 @@ public class SrpcRequestPayload {
 
     private String methodName;
     private Map<String, Object> parameters;
-    private Map<String, Object> options;
 
     public String getMethodName() {
         return methodName;
@@ -29,11 +28,4 @@ public class SrpcRequestPayload {
         this.parameters = parameters;
     }
 
-    public Map<String, Object> getOptions() {
-        return options;
-    }
-
-    public void setOptions(Map<String, Object> options) {
-        this.options = options;
-    }
 }

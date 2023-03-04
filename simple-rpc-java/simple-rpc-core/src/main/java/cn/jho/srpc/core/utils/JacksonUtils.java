@@ -33,4 +33,8 @@ public class JacksonUtils {
         }
     }
 
+    public static <T> T convertValue(Object obj, Class<T> clazz) {
+        return OBJECT_MAPPER.convertValue(obj, clazz);
+    }
+
 }

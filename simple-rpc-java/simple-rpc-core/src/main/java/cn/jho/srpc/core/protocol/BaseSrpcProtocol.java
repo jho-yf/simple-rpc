@@ -1,5 +1,7 @@
 package cn.jho.srpc.core.protocol;
 
+import java.nio.charset.StandardCharsets;
+
 /**
  * <p>SrpcProtocol class.</p>
  *
@@ -24,6 +26,10 @@ public abstract class BaseSrpcProtocol {
 
     public void setContentLength(Long contentLength) {
         this.contentLength = contentLength;
+    }
+
+    public byte[] toPacket() {
+        return toString().getBytes(StandardCharsets.UTF_8);
     }
 
 }

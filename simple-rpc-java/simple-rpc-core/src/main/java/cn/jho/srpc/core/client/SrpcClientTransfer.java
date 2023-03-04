@@ -1,5 +1,8 @@
 package cn.jho.srpc.core.client;
 
+import static cn.jho.srpc.core.constant.SrpcProtocolConst.COLON_SEPARATOR;
+
+import cn.jho.srpc.core.SrpcRuntimeException;
 import cn.jho.srpc.core.protocol.SrpcRequest;
 import cn.jho.srpc.core.protocol.SrpcResponse;
 import cn.jho.srpc.core.protocol.SrpcResponsePayload;
@@ -56,7 +59,7 @@ public class SrpcClientTransfer {
             }
 
             line = reader.readLine();
-            split = line.replace("\r\n", "").split(":");
+            split = line.replace("\r\n", "").split(COLON_SEPARATOR);
             if (split.length > 1) {
                 response.setContentLength(Long.valueOf(split[1]));
             }
@@ -66,7 +69,7 @@ public class SrpcClientTransfer {
                 sb.append(line);
             }
             String payloadInfo = sb.toString();
-            split = payloadInfo.split(":", 2);
+            split = payloadInfo.split(COLON_SEPARATOR, 2);
             if (split.length > 1) {
                 SrpcResponsePayload payload = JacksonUtils.readValue(split[1], SrpcResponsePayload.class);
                 response.setPayload(payload);
@@ -74,7 +77,7 @@ public class SrpcClientTransfer {
 
             return response;
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new SrpcRuntimeException(e);
         }
     }
 

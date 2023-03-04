@@ -9,6 +9,13 @@ public class Pong {
 
     private String msg;
 
+    public Pong() {
+    }
+
+    public Pong(String msg) {
+        this.msg = msg;
+    }
+
     public String getMsg() {
         return msg;
     }

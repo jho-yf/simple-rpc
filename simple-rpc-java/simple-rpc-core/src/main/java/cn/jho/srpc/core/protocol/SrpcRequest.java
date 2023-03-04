@@ -24,10 +24,6 @@ public class SrpcRequest extends BaseSrpcProtocol {
         this.payload = payload;
     }
 
-    public byte[] toPacket() {
-        return toString().getBytes(StandardCharsets.UTF_8);
-    }
-
     @Override
     public String toString() {
         String payloadStr = JacksonUtils.writeValueAsString(payload);
