@@ -101,6 +101,7 @@ methods:
 #### python
 
 - [server](/simple-rpc-python/demo/py_server.py)
+- [async_server](/simple-rpc-python/demo/async_py_server.py)
 - [client](/simple-rpc-python/demo/py_client.py)
 
 # 开发计划
